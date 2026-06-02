@@ -75,31 +75,31 @@ npm run dev
 
 El frontend estará disponible en: `http://localhost:5173` (o el puerto que indique Vite en la consola).
 
-   ## 🗺️ Mapa de la API (Endpoints)
+   ## Mapa de la API (Endpoints)
 
 El backend expone los siguientes endpoints, divididos por recursos. Todas las rutas (excepto el System, Register y Login) están protegidas y requieren un token JWT válido en la cabecera `Authorization`.
 
-### 🛡️ Autenticación (`/api`)
+### Autenticación (`/api`)
 * `POST /api/register`: Registra un nuevo usuario en la base de datos (encriptando su contraseña).
 * `POST /api/login`: Recibe credenciales y devuelve un token de acceso JWT (`access_token`).
 
-### 📦 Productos (`/api/productos`)
+### Productos (`/api/productos`)
 * `GET /api/productos`: Lista todos los productos disponibles.
 * `POST /api/productos`: Crea un nuevo producto.
 * `PUT /api/productos/{id}`: Actualiza la información de un producto existente.
 * `DELETE /api/productos/{id}`: Elimina un producto.
 
-### 👥 Usuarios (`/api/users`)
+### Usuarios (`/api/users`)
 * `GET /api/users`: Lista todos los usuarios registrados.
 * `PUT /api/users/{id}`: Actualiza los datos de un usuario.
 * `DELETE /api/users/{id}`: Elimina a un usuario del sistema.
 
-### 🩺 Sistema (`/health`)
+### Sistema (`/health`)
 * `GET /health`: Comprueba el estado del servidor y la conexión activa con MongoDB (Health Check).
 
 ---
 
-## 🔒 Estructura y Seguridad Aplicada
+## Estructura y Seguridad Aplicada
 
 * **Arquitectura en capas:** El backend sigue el patrón repositorio (`routers` -> `services` -> `repositories`), aislando la lógica de base de datos de las peticiones HTTP.
 * **Manejo Global de Excepciones:** Se interceptan errores 500 y errores de validación de Pydantic (422) para devolver respuestas JSON limpias sin colapsar el servidor.
