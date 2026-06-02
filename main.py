@@ -36,7 +36,7 @@ async def global_exception_handler(request: Request, exc: Exception):
     )
 
 app.include_router(auth.router, prefix="/api", tags=["Auth"])
-app.include_router(products.router, prefix="/api/products", tags=["Products"])
+app.include_router(products.router, prefix="/api/productos", tags=["Products"])
 app.include_router(users.router, prefix="/api/users", tags=["Users"])
 
 @app.get("/")
